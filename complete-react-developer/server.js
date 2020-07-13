@@ -17,7 +17,7 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 app.use("/api/posts", require("./routes/api/posts"));
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 //const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`Server statrted on port ${PORT}`));
+app.listen(port, () => console.log(`Server statrted on port ${port}`));
