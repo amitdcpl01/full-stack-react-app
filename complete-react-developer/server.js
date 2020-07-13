@@ -17,7 +17,8 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 app.use("/api/posts", require("./routes/api/posts"));
 
-const port = process.env.PORT || 5000;
-//const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Server statrted on port ${port}`));
+//So you pass that app.listen, or to app.set('port', ...), and that makes your server be able to accept a parameter from the environment what port to listen on.
+app.listen(PORT, () => console.log(`Server statrted on port ${PORT}`));
