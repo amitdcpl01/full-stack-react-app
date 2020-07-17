@@ -7,12 +7,15 @@ import Login from "./components/auth/Login";
 import Alert from "./components/layout/Alert";
 import { loadUser } from "./action/auth";
 import setAuthToken from "./utils/setAuthToken";
+import Dashboard from './components/dashboard/Dashboard';
+
 
 import "./App.css";
 
 //redux
 import { Provider } from "react-redux";
 import store from "./store";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -22,6 +25,7 @@ const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
+
   return (
     <Provider store={store}>
       <Router>
@@ -33,6 +37,7 @@ const App = () => {
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
             </Switch>
           </section>
         </Fragment>
