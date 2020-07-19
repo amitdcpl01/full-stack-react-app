@@ -9,7 +9,6 @@ const initialState = {
 }
 
 export default function (state = initialState, action) {
-    debugger;
     const { type, payload } = action;
     switch (type) {
         case GET_PROFILE:
